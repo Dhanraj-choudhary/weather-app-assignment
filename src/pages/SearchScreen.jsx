@@ -17,8 +17,8 @@ export default function SearchScreen() {
       const current = await getCurrentByCity(city);
       setWeather(current);
 
-      // Fetch AQI (PM2.5)
-      let pm25 = Math.floor(Math.random() * 50 + 1); // Fallback random
+      
+      let pm25 = Math.floor(Math.random() * 50 + 1); 
       try {
         const air = await axios.get(
           `${BASE}/air_pollution?lat=${current.coord.lat}&lon=${current.coord.lon}&appid=${API_KEY}`
@@ -43,15 +43,6 @@ export default function SearchScreen() {
        setCity("");
     }
   };
-
-  // const getSeverity = (pm25) => {
-  //   if (pm25 <= 50) return "Good air";
-  //   if (pm25 <= 100) return "Moderate";
-  //   if (pm25 <= 150) return "Unhealthy for Sensitive Groups";
-  //   if (pm25 <= 200) return "Unhealthy";
-  //   if (pm25 <= 300) return "Very Unhealthy";
-  //   return "Hazardous";
-  // };
 
   return (
     <div
@@ -173,7 +164,7 @@ export default function SearchScreen() {
           )}
         </div>
       )}
-      {/* <h4 className="mb-3">Daily</h4> */}
+      
       <div className="row justify-content-center">
         {forecast.map((item) => (
           <div key={item.dt} className="col-md-2 col-6 mb-3">

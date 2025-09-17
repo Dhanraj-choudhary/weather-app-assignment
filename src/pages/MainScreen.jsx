@@ -30,8 +30,8 @@ export default function MainScreen() {
         }
         setCurrentWeather(current);
 
-        // Fetch AQI (PM2.5)
-        let pm25 = Math.floor(Math.random() * 50 + 1); // Fallback random
+  
+        let pm25 = Math.floor(Math.random() * 50 + 1);
         try {
           const air = await axios.get(
             `${BASE}/air_pollution?lat=${current.coord.lat}&lon=${current.coord.lon}&appid=${API_KEY}`
@@ -73,10 +73,12 @@ export default function MainScreen() {
   const countryLabel =
     currentWeather.name === "Jaipur" ? "IN" : currentWeather.sys.country;
   const mainCondition = currentWeather.weather[0].main;
+
   const iconCode = currentWeather.weather[0].icon;
+
   const windKmh = Math.round(currentWeather.wind.speed * 3.6);
+
   const visibilityKm = currentWeather.visibility / 1000;
-  
 
   const humidity = `${currentWeather.main.humidity}%`;
   const windSpeed = `${windKmh} km/h`;
@@ -84,7 +86,7 @@ export default function MainScreen() {
     hour: "2-digit",
     minute: "2-digit",
     hour12: true,
-  }); // 03:22 PM IST
+  });
 
   return (
     <div
@@ -155,7 +157,7 @@ export default function MainScreen() {
                 stroke="gray"
                 strokeWidth="2"
               />
-              {/* <line x1="25" y1 "20" x2="75" y2="20" stroke="gray" strokeWidth="2" /> */}
+              
               <line
                 x1="20"
                 y1="30"

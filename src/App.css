@@ -1,11 +1,10 @@
-/* app.css */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   background: linear-gradient(to bottom, #667eea, #764ba2);
   min-height: 100vh;
   color: #ffffff;
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-x: hidden; 
 }
 
 .container {

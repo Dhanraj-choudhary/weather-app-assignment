@@ -10,7 +10,6 @@ export default function App() {
         <div className="container-fluid">
          
           <Link className="navbar-brand" to="/">WeatherApp</Link>
-
          
           <Link className="nav-link " to="/search">
             <i className="bi bi-search" style={{ fontSize: '1.5rem' }}></i> Search
@@ -18,7 +17,6 @@ export default function App() {
         </div>
       </nav>
 
-      
       <Routes>
         <Route path="/" element={<MainScreen />} />
         <Route path="/search" element={<SearchScreen />} />
